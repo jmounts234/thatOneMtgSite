@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import { FC } from 'react'
+import ImageList from './components/ImageList'
+
+const imageUrls = [
+  'https://cards.scryfall.io/large/front/9/2/924e9db3-3f7b-4e07-b523-5ec236f99681.jpg?1681411424',
+  'https://cards.scryfall.io/large/front/c/a/ca095559-ac77-4186-8d9b-b75ce0607582.jpg?1592710284',
+  'https://cards.scryfall.io/large/front/4/8/48b597dd-f6eb-45da-977d-453e8c1433cc.jpg?1608911023',
+];
+
+const App: FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Some Mtg Site</h1>
+      <div className='hand'>
+        <ImageList imageUrls={imageUrls} />
+      </div>
     </div>
   );
 }
